@@ -6,7 +6,7 @@ RUN mkdir -p /etc/portage/repos.conf && \
 
 # Initial snapshot with emerge-webrsync
 RUN emerge-webrsync && \
-    emerge app-portage/pkgdev app-portage/pkgcheck && \
+    emerge dev-util/pkgdev dev-util/pkgcheck && \
     rm -rf /var/db/repos/gentoo
 
 CMD ["bash"]
