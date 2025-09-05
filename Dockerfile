@@ -2,7 +2,7 @@ FROM gentoo/stage3:latest
 
 # Configure Gentoo repository
 RUN mkdir -p /etc/portage/repos.conf && \
-    echo "[gentoo]\nlocation = /var/db/repos/gentoo\nsync-type = webrsync" > /etc/portage/repos.conf/gentoo.conf
+    echo "[DEFAULT]\nmain-repo = gentoo\n[gentoo]\nlocation = /var/db/repos/gentoo\nsync-type = webrsync" > /etc/portage/repos.conf/gentoo.conf
 
 # Initial snapshot with emerge-webrsync
 RUN emerge-webrsync && \
